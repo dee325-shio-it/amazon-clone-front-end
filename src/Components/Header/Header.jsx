@@ -11,7 +11,6 @@ import { DataContext } from "../DataProvider/DataProvider";
 const Header = () => {
   const [{ basket }] = useContext(DataContext);
 
-  // Corrected reduce syntax and fixed totalItem variable name
   const totalItem = basket?.reduce((amount, item) => {
     return amount + (item.amount || 1);
   }, 0);
