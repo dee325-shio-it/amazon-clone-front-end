@@ -1,6 +1,6 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -13,8 +13,18 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = Firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-// Export auth and firestore from compat SDK
-export const auth = getAuth();
-export const db = app.firestore();
+//  Initialize auth and db
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+//  Export them for use in other files
+export { auth, db };
+
+// // Initialize Firebase
+// const app = Firebase.initializeApp(firebaseConfig);
+
+// // Export auth and firestore from compat SDK
+// export const auth = getAuth();
+// export const db = app.firestore();

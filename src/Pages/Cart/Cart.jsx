@@ -8,11 +8,12 @@ import { Type } from "../../Utility/action.type";
 import { FaArrowDown } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa";
 import CurrencyFormat from "../../Components/Currency/CurrencyFormat";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function Cart() {
   const [{ basket }, dispatch] = useContext(DataContext);
-
+  const navigate = useNavigate();
   const total = basket.reduce(
     (amount, item) => amount + item.price * (item.amount || 1),
     0
@@ -81,7 +82,13 @@ function Cart() {
                 {basket.reduce((acc, item) => acc + (item.amount || 1), 0)}{" "}
                 items): <strong>${total.toFixed(2)}</strong>
               </h3>
-              <button className={classes.checkoutBtn}>
+              {/* <button className={classes.checkoutBtn}>
+                Proceed to Checkout
+              </button> */}
+              <button
+                className={classes.checkoutBtn}
+                onClick={() => navigate("/payments")}
+              >
                 Proceed to Checkout
               </button>
             </div>
