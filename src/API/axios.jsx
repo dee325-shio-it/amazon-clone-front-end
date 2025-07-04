@@ -5,7 +5,6 @@ const axiosInstance = axios.create({
   baseURL: "https://amazon-api-paqp.onrender.com", // Use the deployed URL
   headers: {
     "Content-Type": "application/json",
-    // Any other headers you might need can go here
   },
 });
 

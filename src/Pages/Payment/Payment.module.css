@@ -1,116 +1,121 @@
 /* Payment Header */
 .payment__header {
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
-    background-color: rgb(234, 237, 237);
-    font-weight: 600; /* Make header bold */
-    color: #333; /* Dark text for contrast */
-  }
-  
-  /* Payment Section */
-  .payment {
-    padding: 30px;
-    background-color: #fff; /* White background for payment section */
-    border-radius: 8px; /* Rounded corners for the section */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Soft shadow for separation */
-  }
-  
-  /* Flex Layout for Sections */
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  background-color: rgb(234, 237, 237);
+  font-weight: 600; /* Make header bold */
+  color: #333; /* Dark text for contrast */
+}
+
+/* Payment Section */
+.payment {
+  padding: 30px;
+  background-color: #fff; /* White background for payment section */
+  border-radius: 8px; /* Rounded corners for the section */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Soft shadow for separation */
+}
+
+/* Flex Layout for Sections */
+.flex {
+  display: flex;
+  gap: 20px;
+  padding: 30px 0;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allow wrapping of items */
+}
+
+/* Flex Heading Style */
+.flex h3 {
+  font-size: 20px;
+  font-weight: 600;
+  min-width: 300px;
+  color: #111; /* Dark color for better readability */
+}
+
+/* Image inside Flex */
+.flex img {
+  width: 80px !important;
+  object-fit: cover; /* Ensure images don't stretch */
+}
+
+/* Make div elements inside .flex more flexible */
+.flex div {
+  height: auto !important;
+}
+
+/* Card Payment Section */
+.payment_card_container {
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto; /* Center the payment form */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f7f7f7; /* Light gray background */
+}
+
+/* Price Display */
+.payment__price {
+  padding: 20px;
+}
+
+.payment__price > div {
+  display: flex;
+  font-size: 16px;
+  gap: 10px;
+}
+
+/* Button Styling */
+.payment__details button {
+  margin-top: 15px;
+  width: 100%;
+  border: none;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  padding: 12px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.payment__details button:hover {
+  background-color: var(--primary-shade);
+}
+
+.payment__details button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Loading Spinner */
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  color: rgb(52, 52, 52);
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
   .flex {
-    display: flex;
-    gap: 20px;
-    padding: 30px 0;
-    align-items: flex-start;
-    flex-wrap: wrap; /* Allow wrapping of items */
+    flex-direction: column;
   }
-  
-  /* Flex Heading Style */
-  .flex h3 {
-    font-size: 20px;
-    font-weight: 600;
-    min-width: 300px;
-    color: #111; /* Dark color for better readability */
-  }
-  
-  /* Image inside Flex */
-  .flex img {
-    width: 80px !important;
-    object-fit: cover; /* Ensure images don't stretch */
-  }
-  
-  /* Make div elements inside .flex more flexible */
-  .flex div {
-    height: auto !important;
-  }
-  
-  /* Card Payment Section */
+
+  /* Center the payment form on smaller screens */
   .payment_card_container {
-    max-width: 350px;
-    width: 100%;
-    margin: 0 auto; /* Center the payment form */
+    max-width: 100%;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f7f7f7; /* Light gray background */
   }
-  
-  /* Price Display */
+
   .payment__price {
-    padding: 20px;
+    font-size: 14px;
   }
-  
-  .payment__price > div {
-    display: flex;
-    font-size: 16px;
-    gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .flex {
+    flex-direction: column;
   }
-  
-  /* Button Styling */
-  .payment__details button {
-    margin-top: 15px;
-    width: 100%;
-    border: none;
-    background-color: var(--primary-color);
-    border-radius: 5px;
-    padding: 12px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  
-  .payment__details button:hover {
-    background-color: var(--primary-shade);
-  }
-  
-  .payment__details button:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-  }
-  
-  /* Loading Spinner */
-  .loading {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
-    color: rgb(52, 52, 52);
-  }
-  
-  /* Responsive Design for Smaller Screens */
-  @media screen and (max-width: 768px) {
-    .flex {
-      flex-direction: column;
-    }
-  
-    /* Center the payment form on smaller screens */
-    .payment_card_container {
-      max-width: 100%;
-      padding: 20px;
-    }
-  
-    .payment__price {
-      font-size: 14px;
-    }
-  }
-  
+}
